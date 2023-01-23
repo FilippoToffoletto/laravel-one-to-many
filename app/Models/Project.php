@@ -12,6 +12,12 @@ class Project extends Model
 
     protected $fillable = ['name', 'slug', 'client_name', 'cover_image','summary','cover_image_original'];
 
+
+    //relazione  con la cartella categories appartengono una categoria
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
     public static function generateSlug($string){
         $slug = Str::slug($string, '-');
 
