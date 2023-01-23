@@ -18,7 +18,9 @@
 
     <h3>{{$project->client_name}}</h3>
 
-    <h4>Categoria: {{$project->category->name}}</h4>
+    @if ($project->category)
+        <h4>Categoria: {{$project->category->name}}</h4>
+    @endif
 
     @if ($project->cover_image)
         <div>

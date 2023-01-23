@@ -10,7 +10,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'client_name', 'cover_image','summary','cover_image_original'];
+    protected $fillable = ['name', 'slug', 'client_name', 'cover_image','summary','cover_image_original', 'category_id'];
 
 
     //relazione  con la cartella categories appartengono una categoria
