@@ -26,6 +26,7 @@ Route::middleware(['auth', 'verified'])
         ->group(function(){
             //qui mettiamo tutte le rotte della CRUD
             Route::get('/',[DashboardController::class, 'index'])->name('home');
+            Route::get('projects/project-category', [ProjectController::class, 'categories_project'])->name('categories_project');
             Route::resource('projects', ProjectController::class);
             Route::get('projects/orderby/{column}/{direction}', [ProjectController::class, 'orderby'])->name('projects.orderby');
         });

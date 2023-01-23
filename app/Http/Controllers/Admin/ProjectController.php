@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,6 +29,12 @@ class ProjectController extends Controller
         $projects = Project::orderby($column, $direction)->paginate(8);
         return view('admin.projects.index',compact('projects', 'direction'));
 
+    }
+    public function categories_project(){
+
+        $categories = Category::all();
+
+        return view('admin.projects.list_category_post', compact('categories'));
     }
 
     /**

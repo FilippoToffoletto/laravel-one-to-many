@@ -18,6 +18,8 @@
 
     <h3>{{$project->client_name}}</h3>
 
+    <h4>Categoria: {{$project->category->name}}</h4>
+
     @if ($project->cover_image)
         <div>
             <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->cover_image_original}}">

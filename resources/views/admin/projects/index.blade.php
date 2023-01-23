@@ -30,7 +30,8 @@
         @foreach ($projects as $project)
           <tr>
             <td>{{$project->id}}</td>
-            <td>{{$project->name}} {{$project->category->name}}</td>
+            <td>{{$project->name}} <span class="badge rounded-pill text-bg-info">{{$project->category?->name}}</span>
+                </td>
             <td>{{$project->client_name}}</td>
             <td>{{$project->summary}}</td>
             <td class="ft-action-btn">
