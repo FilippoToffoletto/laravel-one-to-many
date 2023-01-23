@@ -38,6 +38,19 @@
                 <p class="invalid-feedback">{{$message}}</p>
             @enderror
         </div>
+
+        <div class="mb-3">
+            <label for="client_name" class="form-label">Categoria</label>
+            <select class="form-select" name="category_id" >
+                <option value="">Selezionare una categoria</option>
+                @foreach ($categories as $category)
+                <option
+                    @if ($category->id ==old('category_id'))selected @endif
+                     value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="mb-3">
             <label for="cover_image" class="form-label">URL Immagine</label>
             <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{old('cover_image',$project->cover_image)}}" placeholder="URL IMMAGINE">
