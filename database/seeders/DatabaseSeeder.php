@@ -22,6 +22,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //per lanciare tutti i seeder
-        $this->call(ProjectSeeder::class);
+        $this->call(
+            [
+                ProjectSeeder::class,
+                CategoryTableSeeder::class,
+                ProjectCategorySeeder::class
+            ]
+        );
     }
 }
