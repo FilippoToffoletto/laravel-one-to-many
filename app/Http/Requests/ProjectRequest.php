@@ -27,7 +27,7 @@ class ProjectRequest extends FormRequest
             'name'=> 'required|max:255|min:3',
             'client_name'=> 'required|max:255|min:3',
             'summary'=> 'required|min:10',
-            'cover_image'=> 'required|max:255|min:3',
+            'cover_image'=> 'nullable|max:255|min:3',
         ];
     }
 

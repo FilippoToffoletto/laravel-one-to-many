@@ -45,7 +45,7 @@
                 <option value="">Selezionare una categoria</option>
                 @foreach ($categories as $category)
                 <option
-                    @if ($category->id ==old('category_id'))selected @endif
+                    @if ($category->id ==old('category_id', $project->category?->id))selected @endif
                      value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
             </select>

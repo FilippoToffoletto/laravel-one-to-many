@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Guest\PageController;
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'verified'])
             Route::get('projects/project-category', [ProjectController::class, 'categories_project'])->name('categories_project');
             Route::resource('projects', ProjectController::class);
             Route::get('projects/orderby/{column}/{direction}', [ProjectController::class, 'orderby'])->name('projects.orderby');
+            Route::resource('categories', CategoryController::class)->except('show', 'create', 'edit');
         });
 
 
